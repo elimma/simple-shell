@@ -1,4 +1,4 @@
-#include "main.h"
+#include "shell.h"
 
 /**
  * get_history_file - gets the history file
@@ -122,11 +122,11 @@ int build_history_list(info_t *info, char *buf, int linecount)
 int renumber_history(info_t *info)
 {
 	list_t *node = info->history;
-	int i = 0, num;
+	int i = 0;
 
 	while (node)
 	{
-		node->num = i++;
+		node->number = i++;
 		node = node->nxt;
 	}
 	return (info->histcount = i);

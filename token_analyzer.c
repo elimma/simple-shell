@@ -1,4 +1,4 @@
-#include "main.h"
+#include "shell.h"
 
 /**
  * strtow - splits string into words
@@ -60,7 +60,8 @@ char **strtow2(char *str, char d)
 	if (str == NULL || str[0] == 0)
 		return (NULL);
 	for (i = 0; str[i] != '\0'; i++)
-		if ((str[i] != d && str[i + 1] == d) || (str[i] != d && !str[i + 1]) || str[i + 1] == d)
+		if ((str[i] != d && str[i + 1] == d) ||
+				    (str[i] != d && !str[i + 1]) || str[i + 1] == d)
 			num_words++;
 	if (num_words == 0)
 		return (NULL);

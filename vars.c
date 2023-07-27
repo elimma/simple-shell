@@ -1,4 +1,4 @@
-#include "main.h"
+#include "shell.h"
 
 /**
  * is_chain - test if current char in buffer is a chain delimeter
@@ -111,7 +111,8 @@ int replace_vars(info_t *info)
 			continue;
 		if (!_strcmp(info->argv[i], "$?"))
 		{
-			replace_string(&(info->argv[i]), _strdup(convert_number(info->status, 10, 0)));
+			replace_string(&(info->argv[i]),
+					_strdup(convert_number(info->status, 10, 0)));
 			continue;
 		}
 		if (!_strcmp(info->argv[i], "$$"))

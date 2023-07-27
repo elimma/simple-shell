@@ -1,9 +1,9 @@
 #ifndef _SHELL_H
 #define _SHELL_H
 
-#include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <unistd.h>
 #include <sys/types.h>
 #include <sys/wait.h>
@@ -36,7 +36,8 @@
 
 extern char **environ;
 
-/**struct liststr - singly linked list
+/**
+ * struct liststr - singly linked list
  * @number: number field
  * @str: string
  * @nxt: points to the next node
@@ -55,10 +56,10 @@ typedef struct liststr
  *@argv: an array of strings generated from arg
  *@path: a string path for the current command
  *@argc: the argument count
- *@count_line: the error count
- *@erro_num: the error code for exit()
- *@countline_flag: if on count this line of input
- *@filname: the program filename
+ *@line_count: the error count
+ *@err_num: the error code for exit()
+ *@linecount_flag: if on count this line of input
+ *@fname: the program filename
  *@env: linked list local copy of environ
  *@environ: custom modified copy of environ from LL env
  *@history: the history node
@@ -68,7 +69,7 @@ typedef struct liststr
  *@cmd_buf: address of pointer to cmd_buf, on if chaining
  *@cmd_buf_type: CMD_type ||, &&, ;
  *@readfd: the fd from which to read line input
- *@histocount: the history line number count
+ *@histcount: the history line number count
  */
 typedef struct psinfunc
 {
