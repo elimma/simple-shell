@@ -69,19 +69,18 @@ int print_d(int input, int fd)
 	current = _abs_;
 	for (i = 1000000000; i > 1; i /= 10)
 	{
+		if (_abs_ / i)
 		{
-			if (_abs_ / i)
-			{
-				__putchar('0' + current / i);
-				count++;
-			}
-			current %= i;
+			__putchar('0' + current / i);
+			count++;
 		}
-		__putchar('0' + current);
-		count++;
-		return (count);
+		current %= i;
 	}
+	__putchar('0' + current);
+	count++;
+	return (count);
 }
+
 
 /**
  * convert_number - converter function, a clone of itoa
